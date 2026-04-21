@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1a7a4a" />
+  <title>Search – Billiat Kachembo Portfolio</title>
+  <meta name="description" content="Search across Billiat Kachembo's portfolio – data science projects, certifications, skills, and more." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://billiatkachembo.github.io/billiat/search.html" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <style>
+    /* Search-page specific styles */
+    .search-page { max-width: 860px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+
+    .search-hero { text-align: center; padding: 2.5rem 0 2rem; }
+    .search-hero h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; font-family: var(--font-head); }
+    .search-hero p { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.4rem; }
+
+    .search-box-wrap {
+      display: flex;
+      gap: 0.5rem;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 0.5rem 0.5rem 0.5rem 1.25rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1rem;
+      transition: box-shadow 0.25s, border-color 0.25s;
+    }
+    .search-box-wrap:focus-within {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(26,122,74,0.15);
+    }
+    #search-input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      font-size: 1rem;
+      color: var(--text);
+      font-family: var(--font-body);
+      outline: none;
+      padding: 0.4rem 0;
+    }
+    #search-input::placeholder { color: var(--text-light); }
+    .search-btn {
+      padding: 0.65rem 1.5rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .search-btn:hover { background: var(--primary-dark); }
+
+    .search-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 0.82rem;
+      color: var(--text-light);
+    }
+    .suggestions { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .suggestion {
+      padding: 0.3rem 0.85rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .suggestion:hover { background: var(--primary); color: white; border-color: var(--primary); }
+
+    /* Results */
+    .results-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+    .result-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      border-left: 3px solid var(--primary);
+      transition: var(--transition);
+    }
+    .result-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+    .result-title { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.4rem; }
+    .result-title a { color: inherit; }
+    .result-title a:hover { text-decoration: underline; }
+    .result-snippet { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.5rem; }
+    .result-url { font-size: 0.78rem; color: var(--text-light); display: flex; align-items: center; gap: 0.35rem; }
+
+    mark { background: rgba(26,122,74,0.15); color: var(--primary); border-radius: 3px; padding: 0 2px; }
+
+    .empty-state {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      color: var(--text-muted);
+    }
+    .empty-state i { font-size: 2.5rem; margin-bottom: 1rem; display: block; opacity: 0.5; }
+    .empty-state h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text); }
+    .empty-state p { font-size: 0.88rem; }
+
+    /* Loading dots */
+    .loading-dots { display: flex; gap: 0.4rem; justify-content: center; padding: 2rem; }
+    .loading-dots span {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--primary); opacity: 0.3;
+      animation: dotPulse 1.2s ease-in-out infinite;
+    }
+    .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes dotPulse {
+      0%, 100% { opacity: 0.3; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1); }
+    }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      padding: 0.45rem 0.9rem;
+      background: rgba(26,122,74,0.07);
+      border-radius: var(--radius-sm);
+      transition: background 0.2s;
+    }
+    .back-link:hover { background: rgba(26,122,74,0.15); }
+
+    /* Theme toggle corner */
+    .search-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 0;
+    }
+
+    @media (max-width: 600px) {
+      .search-box-wrap { flex-direction: column; padding: 0.75rem; }
+      .search-btn { width: 100%; justify-content: center; }
+      #search-input { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="search-page">
+
+  <!-- Nav bar -->
+  <div class="search-nav">
+    <a href="index.html" class="back-link">
+      <i class="bi bi-arrow-left"></i> Back to Portfolio
+    </a>
+    <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">
+      <i id="theme-icon" class="bi bi-moon"></i>
+    </button>
+  </div>
+
+  <!-- Hero -->
+  <div class="search-hero">
+    <h1 class="gradient-text">Search Portfolio</h1>
+    <p>Find anything across skills, certifications, events, and more</p>
+  </div>
+
+  <!-- Search box -->
+  <div class="search-box-wrap">
+    <i class="bi bi-search" style="color:var(--text-light); font-size:1.1rem;"></i>
+    <input type="text" id="search-input" placeholder="Search for data science, Python, Zambia…" autocomplete="off" />
+    <button class="search-btn" id="search-btn">
+      <i class="bi bi-search"></i> Search
+    </button>
+  </div>
+
+  <!-- Meta + suggestions -->
+  <div class="search-meta">
+    <span id="search-stats">Start typing to search…</span>
+    <div class="suggestions">
+      <span class="suggestion" data-q="data science">data science</span>
+      <span class="suggestion" data-q="machine learning">machine learning</span>
+      <span class="suggestion" data-q="Python">Python</span>
+      <span class="suggestion" data-q="Zambia">Zambia</span>
+      <span class="suggestion" data-q="certifications">certifications</span>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="results-list" id="results-container">
+    <div class="empty-state">
+      <i class="bi bi-search"></i>
+      <h3>Results will appear here</h3>
+      <p>Enter a term above to search across all portfolio sections</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  // ---- Theme ----
+  const icon = document.getElementById('theme-icon');
+  function applyTheme(dark) {
+    document.body.classList.toggle('dark', dark);
+    icon.className = dark ? 'bi bi-sun' : 'bi bi-moon';
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+  }
+  const saved = localStorage.getItem('theme');
+  if (saved) applyTheme(saved === 'dark');
+  else if (matchMedia('(prefers-color-scheme:dark)').matches) applyTheme(true);
+  document.getElementById('theme-toggle').addEventListener('click', () => applyTheme(!document.body.classList.contains('dark')));
+
+  // ---- Suggestions ----
+  document.querySelectorAll('.suggestion').forEach(s => {
+    s.addEventListener('click', () => {
+      const q = s.dataset.q;
+      document.getElementById('search-input').value = q;
+      performSearch(q);
+    });
+  });
+
+  // ---- Search index ----
+  let index = null;
+
+  async function buildIndex() {
+    document.getElementById('results-container').innerHTML = '<div class="loading-dots"><span></span><span></span><span></span></div>';
+    document.getElementById('search-stats').textContent = 'Loading content…';
+    try {
+      const res  = await fetch('index.html');
+      const html = await res.text();
+      const doc  = new DOMParser().parseFromString(html, 'text/html');
+      const items = [];
+      doc.querySelectorAll('section[id]').forEach(sec => {
+        const title = (sec.querySelector('h2, h1') || {}).textContent || sec.id;
+        const text  = sec.textContent.replace(/\s+/g, ' ').trim();
+        if (text.length > 10) items.push({ title: title.trim(), text, url: `index.html#${sec.id}` });
+      });
+      index = items.map(i => ({ ...i, tl: i.title.toLowerCase(), xl: i.text.toLowerCase() }));
+    } catch {
+      index = [
+        { title: 'About Me',       text: 'Billiat Kachembo is a Data Scientist from Zambia. Curious, analytical, always learning.',                                   url: 'index.html#about' },
+        { title: 'Core Skills',    text: 'Data Analysis, Machine Learning, Innovation, Python, R, SQL, AI, Data Visualization',                                       url: 'index.html#skills' },
+        { title: 'Certifications', text: 'IBM Data Science Professional Certificate, Google Data Analytics Professional Certificate, Coursera, Python, SQL, Tableau',   url: 'index.html#certifications' },
+        { title: 'Education',      text: 'BSc Data Science at Kapasa Makasa University, Zambia',                                                                      url: 'index.html#education' },
+        { title: 'Contact',        text: 'Lusaka Zambia, +260777771921, +260965169247, billiatkachembo1@gmail.com',                                                   url: 'index.html#contact' },
+      ].map(i => ({ ...i, tl: i.title.toLowerCase(), xl: i.text.toLowerCase() }));
+    }
+
+    const params = new URLSearchParams(location.search);
+    const q = params.get('q');
+    if (q) { document.getElementById('search-input').value = q; performSearch(q); }
+    else { document.getElementById('results-container').innerHTML = '<div class="empty-state"><i class="bi bi-search"></i><h3>Results will appear here</h3><p>Enter a term above to search across all portfolio sections</p></div>'; document.getElementById('search-stats').textContent = 'Start typing to search…'; }
+
+    document.getElementById('search-input').addEventListener('input', debounce(e => performSearch(e.target.value.trim()), 220));
+    document.getElementById('search-btn').addEventListener('click', () => performSearch(document.getElementById('search-input').value.trim()));
+    document.getElementById('search-input').addEventListener('keydown', e => { if (e.key === 'Enter') performSearch(e.target.value.trim()); });
+  }
+
+  function performSearch(q) {
+    const url = new URL(location); url.searchParams.set('q', q); history.replaceState({}, '', url);
+    if (q.length < 2) {
+      document.getElementById('results-container').innerHTML = q.length === 0
+        ? '<div class="empty-state"><i class="bi bi-search"></i><h3>Results will appear here</h3><p>Enter a term above to search</p></div>'
+        : '<div class="empty-state"><i class="bi bi-exclamation-circle"></i><h3>Keep typing…</h3><p>Enter at least 2 characters</p></div>';
+      document.getElementById('search-stats').textContent = 'Start typing to search…';
+      return;
+    }
+    const t0 = performance.now();
+    const results = doSearch(q);
+    const ms = (performance.now() - t0).toFixed(1);
+    renderResults(results, q);
+    document.getElementById('search-stats').textContent = `${results.length} result${results.length !== 1 ? 's' : ''} in ${ms}ms`;
+  }
+
+  function doSearch(q) {
+    const term = q.toLowerCase();
+    return (index || [])
+      .map(item => {
+        const inTitle   = item.tl.includes(term);
+        const inContent = item.xl.includes(term);
+        if (!inTitle && !inContent) return null;
+        return { title: item.title, snippet: snippet(item.text, term, inTitle), url: item.url, score: inTitle ? 2 : 1 };
+      })
+      .filter(Boolean)
+      .sort((a, b) => b.score - a.score);
+  }
+
+  function snippet(text, term, isTitle) {
+    if (isTitle) return text.length > 160 ? text.slice(0, 160) + '…' : text;
+    const idx   = text.toLowerCase().indexOf(term);
+    if (idx < 0) return text.slice(0, 160) + '…';
+    const start = Math.max(0, idx - 50);
+    const end   = Math.min(text.length, idx + term.length + 100);
+    return (start > 0 ? '…' : '') + text.slice(start, end) + (end < text.length ? '…' : '');
+  }
+
+  function hl(text, term) {
+    const esc = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return text.replace(new RegExp(`(${esc})`, 'gi'), '<mark>$1</mark>');
+  }
+
+  function renderResults(results, q) {
+    const container = document.getElementById('results-container');
+    if (!results.length) {
+      container.innerHTML = `<div class="empty-state"><i class="bi bi-search"></i><h3>No results for "${q}"</h3><p>Try different keywords</p></div>`;
+      return;
+    }
+    container.innerHTML = '';
+    const frag = document.createDocumentFragment();
+    results.forEach(r => {
+      const div = document.createElement('div');
+      div.className = 'result-card';
+      div.innerHTML = `
+        <div class="result-title"><a href="${r.url}">${hl(r.title, q)}</a></div>
+        <div class="result-snippet">${hl(r.snippet, q)}</div>
+        <div class="result-url"><i class="bi bi-link-45deg"></i>${r.url}</div>`;
+      frag.appendChild(div);
+    });
+    container.appendChild(frag);
+  }
+
+  function debounce(fn, delay) {
+    let t;
+    return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), delay); };
+  }
+
+  buildIndex();
+})();
+</script>
+</body>
+</html>

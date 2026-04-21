@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1a7a4a" />
+
+  <title>Billiat Kachembo – Data Scientist | Author | Zambia</title>
+  <meta name="description" content="Billiat Kachembo is a Data Scientist from Zambia specialising in data analysis, machine learning, and AI. BSc Data Science student, IBM & Google certified." />
+  <meta name="keywords" content="Billiat Kachembo, Data Scientist Zambia, data analysis, machine learning, Python, IBM certified, Google Data Analytics, Kapasa Makasa University" />
+  <meta name="author" content="Billiat Kachembo" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://billiatkachembo.github.io/billiat/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Billiat Kachembo – Data Scientist | Zambia" />
+  <meta property="og:description" content="Data Scientist from Zambia specialising in machine learning, data analysis, and AI. IBM & Google certified." />
+  <meta property="og:url" content="https://billiatkachembo.github.io/billiat/" />
+  <meta property="og:image" content="https://billiatkachembo.github.io/billiat/trainer-3.jpg" />
+  <meta property="og:site_name" content="Billiat Kachembo" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Billiat Kachembo – Data Scientist | Zambia" />
+  <meta name="twitter:description" content="Data Scientist from Zambia specialising in machine learning, data analysis, and AI." />
+  <meta name="twitter:image" content="https://billiatkachembo.github.io/billiat/trainer-3.jpg" />
+
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="sitemap" type="application/xml" href="/billiat/sitemap.xml" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>(function(){ emailjs.init("L3v8qdf378wbAscEb"); })();</script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Loader inline style (must be instant) -->
+  <style>
+    body { visibility: hidden; }
+    .loader-wrapper { visibility: visible; }
+  </style>
+</head>
+<body>
+
+<!-- ========== LOADER ========== -->
+<div class="loader-wrapper" id="loader">
+  <svg class="infinity-loader" viewBox="0 0 100 50">
+    <path d="M10,25 C10,5 40,5 50,25 C60,45 90,45 90,25 C90,5 60,5 50,25 C40,45 10,45 10,25" />
+  </svg>
+  <div id="loader-pct" class="percentage-text">0%</div>
+</div>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="index.html" class="navbar-brand">
+      <i class="bi bi-journal-code"></i>
+      <span>My Portfolio</span>
+    </a>
+  </div>
+
+  <div class="nav-center">
+    <ul class="nav-links">
+      <li><a href="index.html" class="active"><i class="bi bi-house-door"></i> Home</a></li>
+      <li><a href="#about"><i class="bi bi-person-circle"></i> About</a></li>
+      <li><a href="#contact"><i class="bi bi-telephone-forward"></i> Contact</a></li>
+      <li class="dropdown">
+        <a href="#">Learn More <i class="bi bi-caret-down-fill"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="https://drive.google.com/file/d/1q4TPlEfB4oy-gtVEzhPevPQcetjvKkId/view?usp=drive_link" target="_blank" rel="noopener">Finances in Zambia</a></li>
+          <li><a href="https://www.geeksforgeeks.org/data-science-for-beginners/" target="_blank" rel="noopener">Data Science</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="nav-right">
+    <div class="nav-social">
+      <a href="https://web.facebook.com/profile.php?id=61583184544433" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://x.com/BKachembo?t=EgZlKtZi9ynj7zb6EPFFnA&s=09" target="_blank" rel="noopener" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.linkedin.com/in/billiat-kachembo-259314287/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="https://www.instagram.com/billiat.kachembo" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="mailto:billiatkachembo1@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+    </div>
+    <a href="search.html" class="nav-search-link">
+      <i class="bi bi-search"></i> Search
+    </a>
+    <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">
+      <i id="theme-icon" class="bi bi-moon"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Controls -->
+<div class="mobile-toggle-container">
+  <button class="mobile-menu-toggle" aria-label="Open menu"><i class="bi bi-list"></i></button>
+  <button id="mobile-theme-toggle" class="btn-icon" aria-label="Toggle theme"><i id="mobile-theme-icon" class="bi bi-moon"></i></button>
+</div>
+
+<!-- Mobile Drawer -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <span class="navbar-brand"><i class="bi bi-journal-code"></i> My Portfolio</span>
+    <button class="mobile-menu-close" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+  </div>
+  <ul class="mobile-nav-links">
+    <li><a href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+    <li><a href="#about"><i class="bi bi-person-circle"></i> About</a></li>
+    <li><a href="#contact"><i class="bi bi-telephone-forward"></i> Contact</a></li>
+    <li><a href="https://drive.google.com/file/d/1q4TPlEfB4oy-gtVEzhPevPQcetjvKkId/view?usp=drive_link" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text"></i> Finances in Zambia</a></li>
+    <li><a href="https://www.geeksforgeeks.org/data-science-for-beginners/" target="_blank" rel="noopener"><i class="bi bi-mortarboard"></i> Data Science</a></li>
+    <li><a href="search.html"><i class="bi bi-search"></i> Search Portfolio</a></li>
+  </ul>
+  <form class="mobile-search-box" action="search.html" method="GET">
+    <input type="text" name="q" placeholder="Quick search…" aria-label="Search" />
+    <button type="submit">Go</button>
+  </form>
+  <div class="mobile-social">
+    <a href="https://web.facebook.com/profile.php?id=61583184544433" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+    <a href="https://x.com/BKachembo?t=EgZlKtZi9ynj7zb6EPFFnA&s=09" target="_blank" rel="noopener" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+    <a href="https://www.linkedin.com/in/billiat-kachembo-259314287/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    <a href="https://www.instagram.com/billiat.kachembo" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+    <a href="mailto:billiatkachembo1@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+  </div>
+</div>
+<div class="mobile-menu-overlay" id="mobileOverlay"></div>
+
+<!-- ========== HERO ========== -->
+<section id="home" class="hero-section">
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="hero-blob hero-blob-3"></div>
+  <div class="hero-blob hero-blob-4"></div>
+  <div class="hero-content">
+    <h2 class="hero-greeting">👋 Hi there, I'm</h2>
+    <h1 class="hero-title gradient-text">
+      <span id="title-text"></span><span id="title-cursor" class="typewriter-cursor"></span>
+    </h1>
+    <p class="hero-subtitle">
+      <span id="subtitle-text"></span><span id="subtitle-cursor" class="typewriter-cursor"></span>
+    </p>
+    <div class="hero-icons">
+      <div class="hero-icon-item">
+        <div class="hero-icon-circle"><i data-lucide="bar-chart-3"></i></div>
+        <span>Data-Driven Insights</span>
+      </div>
+      <div class="hero-icon-item">
+        <div class="hero-icon-circle"><i data-lucide="brain"></i></div>
+        <span>Machine Learning</span>
+      </div>
+      <div class="hero-icon-item">
+        <div class="hero-icon-circle"><i data-lucide="gem"></i></div>
+        <span>Value Creation</span>
+      </div>
+      <div class="hero-icon-item">
+        <div class="hero-icon-circle"><i data-lucide="archive"></i></div>
+        <span>Organized Systems</span>
+      </div>
+    </div>
+  </div>
+  <a href="#about"><button class="scroll-btn" aria-label="Scroll down"><i data-lucide="chevron-down"></i></button></a>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section id="about" class="about-section" data-aos="fade-up">
+  <div class="section-header">
+    <h2 class="gradient-text">About Me</h2>
+    <p>Data Scientist with a passion for exploring data and uncovering insights.</p>
+    <div class="section-divider"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-photo">
+      <div class="photo-frame">
+        <img src="trainer-3.jpg" alt="Billiat Kachembo – Data Scientist" />
+      </div>
+      <p class="caption">Data Scientist</p>
+    </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-icon"><i data-lucide="user"></i></div>
+        <div><h4>Bio</h4><p>Curious, analytical, always learning</p></div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i data-lucide="globe"></i></div>
+        <div><h4>Languages</h4><p>English, Bemba, Nyanja</p></div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i data-lucide="map-pin"></i></div>
+        <div><h4>Location</h4><p>Chinsali, Zambia</p></div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i data-lucide="graduation-cap"></i></div>
+        <div><h4>Education</h4><p>BSc in Data Science</p></div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i data-lucide="music"></i></div>
+        <div><h4>Hobbies</h4><p>Reading, Music, Hiking</p></div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i data-lucide="code"></i></div>
+        <div><h4>Tech Skills</h4><p>Data Analysis, Data Viz, AI</p></div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i data-lucide="terminal"></i></div>
+        <div><h4>Languages Used</h4><p>Python, R, Java, C++, C#</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SKILLS ========== -->
+<section id="skills" class="skills-section" data-aos="fade-up">
+  <div class="section-header">
+    <h2 class="gradient-text">Core Skills</h2>
+    <p>What I bring to every data challenge</p>
+    <div class="section-divider"></div>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <span class="skill-emoji">📊</span>
+      <h4>Data Analysis</h4>
+      <p>Exploring patterns and uncovering insights from complex datasets</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-emoji">🤖</span>
+      <h4>Machine Learning</h4>
+      <p>Building predictive models and intelligent AI-driven solutions</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-emoji">💡</span>
+      <h4>Innovation</h4>
+      <p>Designing practical solutions that create real value</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== VIDEO ========== -->
+<div class="video-section" data-aos="fade-up">
+  <div class="video-card">
+    <strong>Future Technology</strong>
+    <p>An immersive glimpse into the innovations shaping tomorrow's world.</p>
+    <button class="btn-toggle-video" id="videoToggleBtn">
+      <i class="bi bi-play-fill"></i> Watch Preview
+    </button>
+    <div id="videoContainer">
+      <video id="techVideo" autoplay loop muted playsinline>
+        <source src="Black%20and%20Blue%20Futuristic%20Technology%20Video.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SUB-MENU ========== -->
+<section class="sub-menu-section">
+  <div class="sub-menu-tabs" id="subMenuTabs">
+    <a href="#features" class="sub-menu-tab active" data-target="features">
+      <i class="bi bi-lightbulb"></i> <span>Mindset</span>
+    </a>
+    <a href="#activity" class="sub-menu-tab" data-target="activity">
+      <i class="bi bi-graph-up"></i> <span>Activity</span>
+    </a>
+    <a href="#newsletter" class="sub-menu-tab" data-target="newsletter">
+      <i class="bi bi-envelope"></i> <span>Newsletter</span>
+    </a>
+    <a href="#contact" class="sub-menu-tab" data-target="contact">
+      <i class="bi bi-telephone-forward"></i> <span>Contact</span>
+    </a>
+    <a href="#education" class="sub-menu-tab" data-target="education">
+      <i class="bi bi-mortarboard"></i> <span>Education</span>
+    </a>
+    <a href="#certifications" class="sub-menu-tab" data-target="certifications">
+      <i class="bi bi-award"></i> <span>Certificates</span>
+    </a>
+  </div>
+</section>
+
+<!-- ========== FEATURES (MINDSET & METHODS) ========== -->
+<section id="features" class="features-section section-tab-content visible">
+  <div class="section-header">
+    <h2 class="gradient-text">Mindset &amp; Methods</h2>
+    <p>The principles that guide how I think and work</p>
+    <div class="section-divider"></div>
+  </div>
+  <div class="features-grid">
+    <div class="feature-box"><i class="bi bi-eye" style="color:#ffbb2c"></i>Insight</div>
+    <div class="feature-box"><i class="bi bi-infinity" style="color:#1a7a4a"></i>Endless Potential</div>
+    <div class="feature-box"><i class="bi bi-mortarboard" style="color:#e80368"></i>Knowledge</div>
+    <div class="feature-box"><i class="bi bi-nut" style="color:#e361ff"></i>Structure</div>
+    <div class="feature-box"><i class="bi bi-shuffle" style="color:#06c1db"></i>Adaptability</div>
+    <div class="feature-box"><i class="bi bi-star" style="color:#ffa76e"></i>Excellence</div>
+    <div class="feature-box"><i class="bi bi-x-diamond" style="color:#11dbcf"></i>Innovation</div>
+    <div class="feature-box"><i class="bi bi-camera-video" style="color:#4233ff"></i>Presentation</div>
+    <div class="feature-box"><i class="bi bi-command" style="color:#b2904f"></i>Control</div>
+    <div class="feature-box"><i class="bi bi-palette" style="color:#00bcd4"></i>Design</div>
+    <div class="feature-box"><i class="bi bi-activity" style="color:#ff5828"></i>Dedication</div>
+    <div class="feature-box"><i class="bi bi-brightness-high" style="color:#29cc61"></i>Inspiration</div>
+    <div class="feature-box"><i class="bi bi-lightning-fill" style="color:#ffeb3b"></i>Energy</div>
+    <div class="feature-box"><i class="bi bi-fire" style="color:#f44336"></i>Passion</div>
+    <div class="feature-box"><i class="bi bi-scissors" style="color:#ffa000"></i>Balance</div>
+    <div class="feature-box"><i class="bi bi-question-circle" style="color:#607d8b"></i>Curiosity</div>
+  </div>
+</section>
+
+<!-- ========== ACTIVITY ========== -->
+<section id="activity" class="activity-section section-tab-content">
+  <div class="section-header">
+    <h2 class="gradient-text">Activity &amp; Events</h2>
+    <p>Workshops and webinars I'm hosting</p>
+    <div class="section-divider"></div>
+  </div>
+  <div class="activity-grid">
+    <div class="activity-card" data-aos="fade-up">
+      <div class="activity-img">
+        <img src="events-item-1.jpg" alt="Introduction to Data Science" />
+        <span class="activity-tag">Workshop</span>
+      </div>
+      <div class="activity-body">
+        <h5 class="activity-title">Introduction to Data Science</h5>
+        <p class="activity-date"><i class="bi bi-calendar-event"></i> Sunday, July 20 · 7:00 PM</p>
+        <p>Join me for an introductory session on data science, exploring the basics, tools, and opportunities in the field.</p>
+      </div>
+    </div>
+    <div class="activity-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="activity-img">
+        <img src="events-item-2.jpg" alt="Python for Beginners" />
+        <span class="activity-tag">Webinar</span>
+      </div>
+      <div class="activity-body">
+        <h5 class="activity-title">Python for Beginners</h5>
+        <p class="activity-date"><i class="bi bi-calendar-event"></i> Saturday, August 10 · 3:00 PM</p>
+        <p>A hands-on workshop for new programmers. Learn Python basics and how it powers data analysis and automation.</p>
+      </div>
+    </div>
+    <div class="activity-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="activity-img">
+        <img src="1353386.png" alt="Building Web Interfaces" />
+        <span class="activity-tag">Workshop</span>
+      </div>
+      <div class="activity-body">
+        <h5 class="activity-title">Building Web Interfaces</h5>
+        <p class="activity-date"><i class="bi bi-calendar-event"></i> Friday, August 30 · 5:00 PM</p>
+        <p>Create beautiful, responsive web interfaces using HTML, CSS, and JavaScript in this interactive session.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== NEWSLETTER ========== -->
+<section id="newsletter" class="newsletter-section section-tab-content">
+  <div class="section-header">
+    <h2 class="gradient-text">Newsletter</h2>
+    <p>Stay informed about my latest projects and insights in data science</p>
+    <div class="section-divider"></div>
+  </div>
+  <p class="newsletter-intro">
+    Subscribe for updates on my latest projects, data science insights, machine learning discoveries, and practical Python tips — delivered straight to your inbox.
+  </p>
+  <div class="newsletter-form-card">
+    <form id="newsletter-form">
+      <div class="newsletter-input-wrap">
+        <input type="email" name="user_email" placeholder="your@email.com" required class="newsletter-input" />
+        <button type="submit" class="btn-subscribe">Sign Up</button>
+      </div>
+      <p id="newsletter-msg"></p>
+      <p class="newsletter-note">By subscribing you agree to receive emails. Unsubscribe anytime.</p>
+    </form>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-box">
+      <i class="bi bi-envelope-paper-fill b-icon" style="color:#9b59b6"></i>
+      <h4>Regular Updates</h4>
+      <p>New projects & insights</p>
+    </div>
+    <div class="benefit-box">
+      <i class="bi bi-bar-chart-line-fill b-icon" style="color:#007bff"></i>
+      <h4>Data Analysis & Viz</h4>
+    </div>
+    <div class="benefit-box">
+      <i class="bi bi-cpu-fill b-icon" style="color:#28a745"></i>
+      <h4>Machine Learning & AI</h4>
+    </div>
+    <div class="benefit-box">
+      <i class="bi bi-graph-up b-icon" style="color:#007bff"></i>
+      <h4>Statistical Modeling</h4>
+    </div>
+    <div class="benefit-box">
+      <i class="bi bi-lightbulb-fill b-icon" style="color:#28a745"></i>
+      <h4>Data-Driven Insights</h4>
+    </div>
+    <div class="benefit-box">
+      <span class="b-icon">📊</span>
+      <h4>Data Science Tips</h4>
+      <p>Real-world experiences</p>
+    </div>
+    <div class="benefit-box">
+      <span class="b-icon">🎯</span>
+      <h4>Exclusive Content</h4>
+      <p>Resources & insights</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact" class="contact-section section-tab-content">
+  <div class="section-header">
+    <h2 class="gradient-text">Contact Me</h2>
+    <p>Have a project, question, or just want to connect?</p>
+    <div class="section-divider"></div>
+  </div>
+  <div class="contact-grid">
+    <form id="contact-form" class="contact-form">
+      <div class="form-group">
+        <label for="from_name">Name</label>
+        <input id="from_name" name="from_name" type="text" placeholder="Your full name" required />
+      </div>
+      <div class="form-group">
+        <label for="reply_to">Email</label>
+        <input id="reply_to" name="reply_to" type="email" placeholder="your@email.com" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Type your message here…" required></textarea>
+      </div>
+      <button type="submit" class="btn-send">Send Message</button>
+      <p id="contact-msg"></p>
+    </form>
+    <div class="contact-info">
+      <div class="contact-info-item">
+        <div class="contact-info-icon"><i data-lucide="map-pin"></i></div>
+        <div>
+          <h4>Address</h4>
+          <p>Lusaka, Zambia</p>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon"><i data-lucide="phone"></i></div>
+        <div>
+          <h4>Phone</h4>
+          <a href="tel:+260777771921">+260 777 771 921</a><br>
+          <a href="tel:+260965169247">+260 965 169 247</a>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon"><i data-lucide="mail"></i></div>
+        <div>
+          <h4>Email</h4>
+          <a href="mailto:billiatkachembo1@gmail.com">billiatkachembo1@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== EDUCATION ========== -->
+<section id="education" class="education-section section-tab-content">
+  <div class="section-header">
+    <h2 class="gradient-text">Education</h2>
+    <p>My academic journey in data science</p>
+    <div class="section-divider"></div>
+  </div>
+  <div class="education-card">
+    <p>Currently pursuing a <strong>BSc in Data Science</strong> at <strong>Kapasa Makasa University</strong>, building a strong foundation in statistics, programming, machine learning, and data-driven decision making.</p>
+    <button class="btn-map-toggle" id="mapToggleBtn">
+      <i class="bi bi-geo-alt-fill"></i> Show Campus Map
+    </button>
+    <div class="map-wrapper" id="mapWrapper">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d1003976.1127326398!2d32.1292393681145!3d-10.59623444019156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d-10.605165999999999!2d32.221727!5e0!3m2!1sen!2szm!4v1753871654429!5m2!1sen!2szm"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Kapasa Makasa University Map">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CERTIFICATIONS ========== -->
+<section id="certifications" class="certifications-section section-tab-content">
+  <div class="section-header">
+    <h2 class="gradient-text">Certifications</h2>
+    <p>Professional credentials from top global platforms</p>
+    <div class="section-divider"></div>
+  </div>
+  <div class="certifications-grid">
+    <div class="cert-card" data-aos="fade-up">
+      <div class="cert-header">
+        <div>
+          <h3 class="cert-title">IBM Data Science Professional Certificate</h3>
+          <div class="cert-platform"><i class="bi bi-mortarboard"></i> Coursera</div>
+        </div>
+        <span class="cert-date">Aug 2024</span>
+      </div>
+      <div class="cert-skills">
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">SQL</span>
+        <span class="skill-pill">Data Visualization</span>
+        <span class="skill-pill">Machine Learning</span>
+        <span class="skill-pill">Statistical Analysis</span>
+      </div>
+      <a href="#" class="cert-link"><i class="bi bi-box-arrow-up-right"></i> View Certificate</a>
+    </div>
+    <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="cert-header">
+        <div>
+          <h3 class="cert-title">Google Data Analytics Professional Certificate</h3>
+          <div class="cert-platform"><i class="bi bi-mortarboard"></i> Coursera</div>
+        </div>
+        <span class="cert-date">Jul 2024</span>
+      </div>
+      <div class="cert-skills">
+        <span class="skill-pill">R</span>
+        <span class="skill-pill">Tableau</span>
+        <span class="skill-pill">Spreadsheets</span>
+        <span class="skill-pill">Data Cleaning</span>
+        <span class="skill-pill">Data Analysis</span>
+      </div>
+      <a href="#" class="cert-link"><i class="bi bi-box-arrow-up-right"></i> View Certificate</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-socials">
+    <a href="https://web.facebook.com/profile.php?id=61583184544433" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+    <a href="https://x.com/BKachembo?t=EgZlKtZi9ynj7zb6EPFFnA&s=09" target="_blank" rel="noopener" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+    <a href="https://www.linkedin.com/in/billiat-kachembo-259314287/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    <a href="https://www.instagram.com/billiat.kachembo" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+    <a href="mailto:billiatkachembo1@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Billiat Kachembo · @Visionary · All rights reserved</p>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button class="scroll-top-btn" id="scrollTopBtn" aria-label="Back to top">
+  <i data-lucide="arrow-up"></i>
+</button>
+
+<!-- ========== SCHEMA MARKUP ========== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Billiat Kachembo",
+  "url": "https://billiatkachembo.github.io/billiat/",
+  "image": "https://billiatkachembo.github.io/billiat/trainer-3.jpg",
+  "jobTitle": "Data Scientist",
+  "description": "Data Scientist from Zambia specialising in data analysis, machine learning, and AI. BSc Data Science student at Kapasa Makasa University.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Lusaka", "addressCountry": "Zambia" },
+  "knowsAbout": ["Data Science", "Machine Learning", "Python", "Data Analysis", "Artificial Intelligence"],
+  "hasCredential": [
+    { "@type": "EducationalOccupationalCredential", "name": "IBM Data Science Professional Certificate", "recognizedBy": { "@type": "Organization", "name": "Coursera / IBM" } },
+    { "@type": "EducationalOccupationalCredential", "name": "Google Data Analytics Professional Certificate", "recognizedBy": { "@type": "Organization", "name": "Coursera / Google" } }
+  ],
+  "sameAs": ["https://www.linkedin.com/in/billiat-kachembo-259314287/", "https://x.com/BKachembo"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Billiat Kachembo",
+  "url": "https://billiatkachembo.github.io/billiat",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://billiatkachembo.github.io/billiat/search.html?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- ========== SCRIPTS ========== -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  // ---- Reveal body after loader ----
+  document.body.style.visibility = 'visible';
+
+  // ---- Loader ----
+  const loader = document.getElementById('loader');
+  const pct    = document.getElementById('loader-pct');
+  let progress = 0;
+  const minTime = 2800;
+  const startTime = Date.now();
+  const ticker = setInterval(() => {
+    progress = Math.min(progress + Math.random() * 3, 100);
+    pct.textContent = Math.floor(progress) + '%';
+    if (progress >= 100) {
+      clearInterval(ticker);
+      const remaining = Math.max(0, minTime - (Date.now() - startTime));
+      setTimeout(() => {
+        loader.style.opacity = '0';
+        setTimeout(() => loader.style.display = 'none', 800);
+      }, remaining);
+    }
+  }, 50);
+
+  // ---- Theme ----
+  function applyTheme(dark) {
+    document.body.classList.toggle('dark', dark);
+    const icon   = document.getElementById('theme-icon');
+    const mIcon  = document.getElementById('mobile-theme-icon');
+    const cls    = dark ? ['bi-sun', 'bi-moon'] : ['bi-moon', 'bi-sun'];
+    if (icon)  { icon.classList.remove(cls[0]);  icon.classList.add(cls[1]); }
+    if (mIcon) { mIcon.classList.remove(cls[0]); mIcon.classList.add(cls[1]); }
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+  }
+  const saved = localStorage.getItem('theme');
+  if (saved) applyTheme(saved === 'dark');
+  else if (matchMedia('(prefers-color-scheme:dark)').matches) applyTheme(true);
+
+  document.getElementById('theme-toggle').addEventListener('click', () => applyTheme(!document.body.classList.contains('dark')));
+  document.getElementById('mobile-theme-toggle').addEventListener('click', () => applyTheme(!document.body.classList.contains('dark')));
+
+  // ---- Mobile menu ----
+  const mobileMenu    = document.getElementById('mobileMenu');
+  const mobileOverlay = document.getElementById('mobileOverlay');
+  function openMenu()  { mobileMenu.classList.add('active'); mobileOverlay.classList.add('active'); document.body.classList.add('menu-open'); }
+  function closeMenu() { mobileMenu.classList.remove('active'); mobileOverlay.classList.remove('active'); document.body.classList.remove('menu-open'); }
+  document.querySelector('.mobile-menu-toggle').addEventListener('click', openMenu);
+  document.querySelector('.mobile-menu-close').addEventListener('click', closeMenu);
+  mobileOverlay.addEventListener('click', closeMenu);
+  document.querySelectorAll('.mobile-nav-links a').forEach(a => a.addEventListener('click', closeMenu));
+
+  // ---- Typewriter ----
+  const TITLE    = 'BILLIAT';
+  const SUBTITLE = 'A data scientist passionate about everything that makes sense 😎';
+  const titleEl    = document.getElementById('title-text');
+  const subtitleEl = document.getElementById('subtitle-text');
+  let ti = 0, si = 0, erasing = false;
+  function typeStep() {
+    if (!titleEl || !subtitleEl) return;
+    if (!erasing) {
+      if (ti < TITLE.length) { titleEl.textContent += TITLE[ti++]; setTimeout(typeStep, 180); }
+      else if (si < SUBTITLE.length) { subtitleEl.textContent += SUBTITLE[si++]; setTimeout(typeStep, 60); }
+      else { erasing = true; setTimeout(typeStep, 2000); }
+    } else {
+      if (subtitleEl.textContent.length) { subtitleEl.textContent = SUBTITLE.slice(0, --si); setTimeout(typeStep, 30); }
+      else if (titleEl.textContent.length) { titleEl.textContent = TITLE.slice(0, --ti); setTimeout(typeStep, 100); }
+      else { erasing = false; setTimeout(typeStep, 800); }
+    }
+  }
+  setTimeout(typeStep, 3200); // start after loader fades
+
+  // ---- Sub-menu tabs ----
+  const tabs = document.querySelectorAll('.sub-menu-tab');
+  function showSection(id) {
+    document.querySelectorAll('.section-tab-content').forEach(s => s.classList.remove('visible'));
+    const target = document.getElementById(id);
+    if (target) target.classList.add('visible');
+  }
+  const savedTab = localStorage.getItem('activeTab');
+  const initTab  = savedTab ? document.querySelector(`.sub-menu-tab[data-target="${savedTab}"]`) : document.querySelector('.sub-menu-tab.active');
+  if (initTab) {
+    tabs.forEach(t => t.classList.remove('active'));
+    initTab.classList.add('active');
+    showSection(initTab.dataset.target);
+  }
+  tabs.forEach(tab => {
+    tab.addEventListener('click', e => {
+      e.preventDefault();
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      showSection(tab.dataset.target);
+      localStorage.setItem('activeTab', tab.dataset.target);
+    });
+  });
+
+  // ---- Video toggle ----
+  const videoToggleBtn = document.getElementById('videoToggleBtn');
+  const videoContainer = document.getElementById('videoContainer');
+  const video          = document.getElementById('techVideo');
+  if (videoToggleBtn) {
+    videoToggleBtn.addEventListener('click', () => {
+      const open = videoContainer.style.display !== 'none' && videoContainer.style.display !== '';
+      if (open) {
+        video.pause();
+        videoContainer.style.display = 'none';
+        videoToggleBtn.innerHTML = '<i class="bi bi-play-fill"></i> Watch Preview';
+      } else {
+        videoContainer.style.display = 'block';
+        video.play();
+        videoToggleBtn.innerHTML = '<i class="bi bi-x-lg"></i> Hide Video';
+      }
+    });
+  }
+
+  // ---- Map toggle ----
+  const mapToggleBtn = document.getElementById('mapToggleBtn');
+  const mapWrapper   = document.getElementById('mapWrapper');
+  if (mapToggleBtn) {
+    mapToggleBtn.addEventListener('click', () => {
+      const open = mapWrapper.classList.toggle('open');
+      mapToggleBtn.innerHTML = open
+        ? '<i class="bi bi-geo-alt-fill"></i> Hide Map'
+        : '<i class="bi bi-geo-alt-fill"></i> Show Campus Map';
+    });
+  }
+
+  // ---- Scroll to top ----
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('show', window.scrollY > 320);
+  });
+  scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // ---- Newsletter form ----
+  const newsletterForm = document.getElementById('newsletter-form');
+  const newsletterMsg  = document.getElementById('newsletter-msg');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      const email = newsletterForm.user_email.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        newsletterMsg.style.color = 'var(--danger)';
+        newsletterMsg.textContent = 'Please enter a valid email address.';
+        return;
+      }
+      try {
+        await emailjs.send('service_bfi98ia', 'template_3y5ud5f', { user_email: email });
+        newsletterMsg.style.color = 'var(--primary)';
+        newsletterMsg.textContent = '✅ Thank you for subscribing!';
+        newsletterForm.reset();
+      } catch (err) {
+        newsletterMsg.style.color = 'var(--danger)';
+        newsletterMsg.textContent = '❌ Something went wrong. Please try again.';
+      }
+    });
+  }
+
+  // ---- Contact form ----
+  const contactForm = document.getElementById('contact-form');
+  const contactMsg  = document.getElementById('contact-msg');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      const data = {
+        from_name: contactForm.from_name.value.trim(),
+        reply_to:  contactForm.reply_to.value.trim(),
+        message:   contactForm.message.value.trim()
+      };
+      if (!data.from_name || !data.reply_to || !data.message) {
+        contactMsg.style.color = 'var(--danger)';
+        contactMsg.textContent = 'Please fill in all fields.';
+        return;
+      }
+      try {
+        await emailjs.send('service_bfi98ia', 'template_hxw2jnn', data);
+        contactMsg.style.color = 'var(--primary)';
+        contactMsg.textContent = '✅ Message sent successfully!';
+        contactForm.reset();
+      } catch (err) {
+        contactMsg.style.color = 'var(--danger)';
+        contactMsg.textContent = '❌ Failed to send. Please try again.';
+      }
+    });
+  }
+
+  // ---- Init libraries ----
+  AOS.init({ duration: 600, once: true, offset: 60 });
+  lucide.createIcons();
+
+})();
+</script>
+</body>
+</html>
