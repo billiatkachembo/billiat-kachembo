@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://billiatkachembo.github.io/billiat/</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://billiatkachembo.github.io/billiat-kachembo/</loc>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://billiatkachembo.github.io/billiat/search.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://billiatkachembo.github.io/billiat-kachembo/search.html</loc>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

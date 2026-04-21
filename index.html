@@ -6,26 +6,26 @@
   <meta name="theme-color" content="#1a7a4a" />
 
   <title>Billiat Kachembo – Data Scientist | Author | Zambia</title>
-  <meta name="description" content="Billiat Kachembo is a Data Scientist from Zambia specialising in data analysis, machine learning, and AI. BSc Data Science student, IBM & Google certified." />
-  <meta name="keywords" content="Billiat Kachembo, Data Scientist Zambia, data analysis, machine learning, Python, IBM certified, Google Data Analytics, Kapasa Makasa University" />
+  <meta name="description" content="Billiat Kachembo is a Data Scientist and BSc Data Science student at Kapasa Makasa University, Zambia. IBM & Google certified in data science and analytics. Specialises in Python, machine learning, and data analysis." />
+  <meta name="keywords" content="Billiat Kachembo, Data Scientist Zambia, Billiat Kachembo data science, Kapasa Makasa University, IBM data science, Google analytics, machine learning Zambia, Python data analyst" />
   <meta name="author" content="Billiat Kachembo" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://billiatkachembo.github.io/billiat/" />
+  <link rel="canonical" href="https://billiatkachembo.github.io/billiat-kachembo/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Billiat Kachembo – Data Scientist | Zambia" />
-  <meta property="og:description" content="Data Scientist from Zambia specialising in machine learning, data analysis, and AI. IBM & Google certified." />
-  <meta property="og:url" content="https://billiatkachembo.github.io/billiat/" />
-  <meta property="og:image" content="https://billiatkachembo.github.io/billiat/trainer-3.jpg" />
+  <meta property="og:description" content="Data Scientist and BSc student at Kapasa Makasa University, Zambia. IBM & Google certified in data science and analytics. Specialises in Python, machine learning, and data analysis." />
+  <meta property="og:url" content="https://billiatkachembo.github.io/billiat-kachembo/" />
+  <meta property="og:image" content="https://billiatkachembo.github.io/billiat-kachembo/trainer-3.jpg" />
   <meta property="og:site_name" content="Billiat Kachembo" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Billiat Kachembo – Data Scientist | Zambia" />
   <meta name="twitter:description" content="Data Scientist from Zambia specialising in machine learning, data analysis, and AI." />
-  <meta name="twitter:image" content="https://billiatkachembo.github.io/billiat/trainer-3.jpg" />
+  <meta name="twitter:image" content="https://billiatkachembo.github.io/billiat-kachembo/trainer-3.jpg" />
 
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="sitemap" type="application/xml" href="/billiat/sitemap.xml" />
+  <link rel="sitemap" type="application/xml" href="/billiat-kachembo/sitemap.xml" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
@@ -132,38 +132,81 @@
 
 <!-- ========== HERO ========== -->
 <section id="home" class="hero-section">
-  <div class="hero-blob hero-blob-1"></div>
-  <div class="hero-blob hero-blob-2"></div>
-  <div class="hero-blob hero-blob-3"></div>
-  <div class="hero-blob hero-blob-4"></div>
-  <div class="hero-content">
-    <h2 class="hero-greeting">👋 Hi there, I'm</h2>
-    <h1 class="hero-title gradient-text">
-      <span id="title-text"></span><span id="title-cursor" class="typewriter-cursor"></span>
-    </h1>
-    <p class="hero-subtitle">
-      <span id="subtitle-text"></span><span id="subtitle-cursor" class="typewriter-cursor"></span>
-    </p>
-    <div class="hero-icons">
-      <div class="hero-icon-item">
-        <div class="hero-icon-circle"><i data-lucide="bar-chart-3"></i></div>
-        <span>Data-Driven Insights</span>
+  <!-- Animated canvas background -->
+  <canvas id="hero-canvas" class="hero-canvas"></canvas>
+
+  <!-- Glow orbs -->
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+
+  <!-- Grid overlay -->
+  <div class="hero-grid-overlay"></div>
+
+  <div class="hero-inner">
+    <!-- Left: text -->
+    <div class="hero-text-col">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Available for collaborations
       </div>
-      <div class="hero-icon-item">
-        <div class="hero-icon-circle"><i data-lucide="brain"></i></div>
-        <span>Machine Learning</span>
+      <h2 class="hero-greeting">Hi there, I'm</h2>
+      <h1 class="hero-title">
+        <span id="title-text"></span><span id="title-cursor" class="typewriter-cursor"></span>
+      </h1>
+      <p class="hero-role">Data Scientist <span class="hero-role-sep">·</span> Author <span class="hero-role-sep">·</span> Zambia</p>
+      <p class="hero-subtitle">
+        <span id="subtitle-text"></span><span id="subtitle-cursor" class="typewriter-cursor"></span>
+      </p>
+      <div class="hero-cta-row">
+        <a href="#contact" class="hero-btn-primary">Get in Touch</a>
+        <a href="#certifications" class="hero-btn-ghost">View Certifications</a>
       </div>
-      <div class="hero-icon-item">
-        <div class="hero-icon-circle"><i data-lucide="gem"></i></div>
-        <span>Value Creation</span>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>2+</strong><span>Certifications</span>
+        </div>
+        <div class="hero-stat-div"></div>
+        <div class="hero-stat">
+          <strong>3</strong><span>Languages</span>
+        </div>
+        <div class="hero-stat-div"></div>
+        <div class="hero-stat">
+          <strong>5+</strong><span>Skills</span>
+        </div>
       </div>
-      <div class="hero-icon-item">
-        <div class="hero-icon-circle"><i data-lucide="archive"></i></div>
-        <span>Organized Systems</span>
+    </div>
+
+    <!-- Right: photo + floating badges -->
+    <div class="hero-photo-col">
+      <div class="hero-photo-ring">
+        <div class="hero-photo-ring-inner">
+          <img src="trainer-3.jpg" alt="Billiat Kachembo" class="hero-photo" />
+        </div>
+        <!-- Orbit dot -->
+        <div class="hero-orbit-dot"></div>
+      </div>
+
+      <!-- Floating skill badges -->
+      <div class="hero-float-badge hero-float-1">
+        <i class="bi bi-bar-chart-fill"></i> Data Analysis
+      </div>
+      <div class="hero-float-badge hero-float-2">
+        <i class="bi bi-cpu-fill"></i> Machine Learning
+      </div>
+      <div class="hero-float-badge hero-float-3">
+        <i class="bi bi-code-slash"></i> Python · R
+      </div>
+      <div class="hero-float-badge hero-float-4">
+        <i class="bi bi-award-fill"></i> IBM · Google
       </div>
     </div>
   </div>
-  <a href="#about"><button class="scroll-btn" aria-label="Scroll down"><i data-lucide="chevron-down"></i></button></a>
+
+  <a href="#about" class="hero-scroll-hint" aria-label="Scroll down">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"><div class="hero-scroll-dot"></div></div>
+  </a>
 </section>
 
 <!-- ========== ABOUT ========== -->
@@ -550,29 +593,97 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Billiat Kachembo",
-  "url": "https://billiatkachembo.github.io/billiat/",
-  "image": "https://billiatkachembo.github.io/billiat/trainer-3.jpg",
+  "givenName": "Billiat",
+  "familyName": "Kachembo",
+  "url": "https://billiatkachembo.github.io/billiat-kachembo/",
+  "image": "https://billiatkachembo.github.io/billiat-kachembo/trainer-3.jpg",
   "jobTitle": "Data Scientist",
-  "description": "Data Scientist from Zambia specialising in data analysis, machine learning, and AI. BSc Data Science student at Kapasa Makasa University.",
-  "address": { "@type": "PostalAddress", "addressLocality": "Lusaka", "addressCountry": "Zambia" },
-  "knowsAbout": ["Data Science", "Machine Learning", "Python", "Data Analysis", "Artificial Intelligence"],
-  "hasCredential": [
-    { "@type": "EducationalOccupationalCredential", "name": "IBM Data Science Professional Certificate", "recognizedBy": { "@type": "Organization", "name": "Coursera / IBM" } },
-    { "@type": "EducationalOccupationalCredential", "name": "Google Data Analytics Professional Certificate", "recognizedBy": { "@type": "Organization", "name": "Coursera / Google" } }
+  "description": "Billiat Kachembo is a Data Scientist and author from Zambia. He is a BSc Data Science student at Kapasa Makasa University, certified by IBM and Google in data science and data analytics. He specialises in data analysis, machine learning, Python, and AI.",
+  "disambiguatingDescription": "Billiat Kachembo is a Data Scientist and BSc Data Science student at Kapasa Makasa University in Zambia. He is not an entrepreneur or farmer. He holds professional certifications from IBM and Google in data science and analytics.",
+  "nationality": {
+    "@type": "Country",
+    "name": "Zambia"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lusaka",
+    "addressCountry": "ZM"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Kapasa Makasa University",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "ZM"
+    }
+  },
+  "knowsAbout": [
+    "Data Science",
+    "Machine Learning",
+    "Artificial Intelligence",
+    "Data Analysis",
+    "Data Visualization",
+    "Python",
+    "R",
+    "SQL",
+    "Statistical Analysis"
   ],
-  "sameAs": ["https://www.linkedin.com/in/billiat-kachembo-259314287/", "https://x.com/BKachembo"]
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "IBM Data Science Professional Certificate",
+      "credentialCategory": "Professional Certificate",
+      "competencyRequired": ["Python", "SQL", "Machine Learning", "Data Visualization", "Statistical Analysis"],
+      "recognizedBy": { "@type": "Organization", "name": "IBM" },
+      "dateCreated": "2024-08"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Google Data Analytics Professional Certificate",
+      "credentialCategory": "Professional Certificate",
+      "competencyRequired": ["R", "Tableau", "Data Cleaning", "Data Analysis", "Spreadsheets"],
+      "recognizedBy": { "@type": "Organization", "name": "Google" },
+      "dateCreated": "2024-07"
+    }
+  ],
+  "email": "billiatkachembo1@gmail.com",
+  "telephone": "+260777771921",
+  "sameAs": [
+    "https://billiatkachembo.github.io/billiat-kachembo/",
+    "https://www.linkedin.com/in/billiat-kachembo-259314287/",
+    "https://x.com/BKachembo",
+    "https://www.instagram.com/billiat.kachembo",
+    "https://web.facebook.com/profile.php?id=61583184544433"
+  ]
 }
 </script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Billiat Kachembo",
-  "url": "https://billiatkachembo.github.io/billiat",
+  "name": "Billiat Kachembo – Data Scientist Portfolio",
+  "description": "Official portfolio of Billiat Kachembo, a Data Scientist and BSc Data Science student from Zambia, certified by IBM and Google.",
+  "url": "https://billiatkachembo.github.io/billiat-kachembo/",
+  "author": {
+    "@type": "Person",
+    "name": "Billiat Kachembo"
+  },
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://billiatkachembo.github.io/billiat/search.html?q={search_term_string}",
+    "target": "https://billiatkachembo.github.io/billiat-kachembo/search.html?q={search_term_string}",
     "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Billiat Kachembo",
+    "jobTitle": "Data Scientist",
+    "description": "Billiat Kachembo is a Data Scientist from Zambia, currently pursuing a BSc in Data Science at Kapasa Makasa University. He holds professional certifications from IBM and Google in data science and data analytics."
   }
 }
 </script>
@@ -769,6 +880,98 @@
   // ---- Init libraries ----
   AOS.init({ duration: 600, once: true, offset: 60 });
   lucide.createIcons();
+
+  // ---- Hero Canvas Particles ----
+  (function () {
+    const canvas = document.getElementById('hero-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H, particles = [], mouse = { x: -999, y: -999 };
+    const COUNT = 55;
+
+    function resize() {
+      W = canvas.width  = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+    }
+
+    function isDark() { return document.body.classList.contains('dark'); }
+
+    class Particle {
+      constructor() { this.reset(true); }
+      reset(init) {
+        this.x  = Math.random() * W;
+        this.y  = init ? Math.random() * H : H + 10;
+        this.r  = Math.random() * 2 + 1;
+        this.vx = (Math.random() - 0.5) * 0.4;
+        this.vy = -(Math.random() * 0.5 + 0.2);
+        this.life = 1;
+        this.decay = Math.random() * 0.003 + 0.001;
+      }
+      update() {
+        const dx = this.x - mouse.x, dy = this.y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 80) { this.vx += dx / dist * 0.12; this.vy += dy / dist * 0.12; }
+        this.x += this.vx; this.y += this.vy;
+        this.life -= this.decay;
+        if (this.life <= 0 || this.y < -10) this.reset(false);
+      }
+      draw() {
+        const alpha = this.life * (isDark() ? 0.55 : 0.35);
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        ctx.fillStyle = isDark()
+          ? `rgba(106,211,160,${alpha})`
+          : `rgba(26,122,74,${alpha})`;
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      particles = [];
+      for (let i = 0; i < COUNT; i++) particles.push(new Particle());
+    }
+
+    function drawLines() {
+      const maxDist = 130;
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const d  = Math.sqrt(dx*dx + dy*dy);
+          if (d < maxDist) {
+            const alpha = (1 - d / maxDist) * 0.18 * Math.min(particles[i].life, particles[j].life);
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = isDark()
+              ? `rgba(106,211,160,${alpha})`
+              : `rgba(26,122,74,${alpha})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function loop() {
+      ctx.clearRect(0, 0, W, H);
+      drawLines();
+      particles.forEach(p => { p.update(); p.draw(); });
+      requestAnimationFrame(loop);
+    }
+
+    resize();
+    initParticles();
+    loop();
+
+    window.addEventListener('resize', () => { resize(); initParticles(); });
+    document.getElementById('home').addEventListener('mousemove', e => {
+      const r = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - r.left;
+      mouse.y = e.clientY - r.top;
+    });
+    document.getElementById('home').addEventListener('mouseleave', () => { mouse.x = -999; mouse.y = -999; });
+  })();
 
 })();
 </script>

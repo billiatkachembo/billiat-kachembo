@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://billiatkachembo.github.io/billiat/sitemap.xml
+Sitemap: https://billiatkachembo.github.io/billiat-kachembo/sitemap.xml
